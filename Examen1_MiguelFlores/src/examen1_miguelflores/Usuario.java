@@ -23,6 +23,7 @@ public class Usuario {
     private String generoFavorito;
     private ArrayList<Usuario> ListAmigos = new ArrayList();
     private ArrayList<Libros> ListLibros = new ArrayList();
+    private ArrayList<solicitudes> ListSolicitudes = new ArrayList();
 
     public Usuario(String usuario, String contrasena, Date fechaNacimiento, String telefono, String correo, String nombre, String generoFavorito) {
         this.usuario = usuario;
@@ -32,6 +33,14 @@ public class Usuario {
         this.correo = correo;
         this.nombre = nombre;
         this.generoFavorito = generoFavorito;
+    }
+
+    public ArrayList<solicitudes> getListSolicitudes() {
+        return ListSolicitudes;
+    }
+
+    public void setListSolicitudes(solicitudes x) {
+        ListSolicitudes.add(x);
     }
 
     public Usuario() {
