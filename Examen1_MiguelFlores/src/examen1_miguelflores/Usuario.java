@@ -21,7 +21,7 @@ public class Usuario {
     private String correo;
     private String nombre;
     private String generoFavorito;
-    private ArrayList<Usuario> ListAmigos = new ArrayList();
+    private ArrayList<String> ListAmigos = new ArrayList();
     private ArrayList<Libros> ListLibros = new ArrayList();
     private ArrayList<solicitudes> ListSolicitudes = new ArrayList();
 
@@ -102,12 +102,12 @@ public class Usuario {
         this.generoFavorito = generoFavorito;
     }
 
-    public ArrayList<Usuario> getListAmigos() {
+    public ArrayList<String> getListAmigos() {
         return ListAmigos;
     }
 
-    public void setListAmigos(ArrayList<Usuario> ListAmigos) {
-        this.ListAmigos = ListAmigos;
+    public void setListAmigos(String x) {
+        ListAmigos.add(x);
     }
 
     public ArrayList<Libros> getListLibros() {
