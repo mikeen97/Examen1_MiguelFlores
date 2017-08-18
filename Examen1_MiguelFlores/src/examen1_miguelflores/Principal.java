@@ -180,7 +180,11 @@ public class Principal extends javax.swing.JFrame {
         cb_user_modificar = new javax.swing.JComboBox<>();
         jButton4 = new javax.swing.JButton();
         jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
+        cb_user_eliminar = new javax.swing.JComboBox<>();
+        jButton5 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jButton13 = new javax.swing.JButton();
         rb_creacion = new javax.swing.ButtonGroup();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -1348,31 +1352,72 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane5.addTab("Modificar Usuario", jPanel12);
 
+        cb_user_eliminar.setModel(new DefaultComboBoxModel()
+        );
+        cb_user_eliminar.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_user_eliminarItemStateChanged(evt);
+            }
+        });
+        cb_user_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_user_eliminarActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Cargar Lista");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Seleccione usuario");
+
+        jLabel6.setText("Eliminar usuario seleccionado");
+
+        jButton13.setText("Aceptar");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 791, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(211, 211, 211)
+                .addComponent(jLabel5)
+                .addGap(46, 46, 46)
+                .addComponent(cb_user_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jButton5)
+                .addContainerGap(186, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton13)
+                .addGap(282, 282, 282))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 464, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(cb_user_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jButton13))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("Eliminar Usuario", jPanel13);
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 791, Short.MAX_VALUE)
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 464, Short.MAX_VALUE)
-        );
-
-        jTabbedPane5.addTab("Listar Usuarios", jPanel14);
 
         javax.swing.GroupLayout nuevoLayout = new javax.swing.GroupLayout(nuevo.getContentPane());
         nuevo.getContentPane().setLayout(nuevoLayout);
@@ -1910,6 +1955,28 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void cb_user_eliminarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_user_eliminarItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_user_eliminarItemStateChanged
+
+    private void cb_user_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_user_eliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_user_eliminarActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (Usuario t1 : ListUsuarios) {
+            model.addElement(t1);
+        }
+        cb_user_eliminar.setModel(model);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        int pos = cb_user_modificar.getSelectedIndex();
+        ListUsuarios.remove(pos);
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1962,11 +2029,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_libros1;
     private javax.swing.JComboBox<String> cb_solicitudes;
     private javax.swing.JComboBox<String> cb_solicitudes_recibidas;
+    private javax.swing.JComboBox<String> cb_user_eliminar;
     private javax.swing.JComboBox<String> cb_user_modificar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
@@ -1982,6 +2051,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -2021,6 +2091,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -2031,6 +2102,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JPanel jPanel1;
@@ -2038,7 +2110,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
