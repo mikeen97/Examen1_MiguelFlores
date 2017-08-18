@@ -12,15 +12,16 @@ import java.util.Date;
  * @author Miguel Flores
  */
 public class Libros {
- private String titulo;
- private String descripcion;
- private int puntaje;
- private int copias_Disponibles;
- private String genero;
- private double valor;
- private String edicion;
- private String autor;
- private Date anoPublicacion;
+
+    private String titulo;
+    private String descripcion;
+    private int puntaje;
+    private int copias_Disponibles;
+    private String genero;
+    private double valor;
+    private String edicion;
+    private String autor;
+    private Date anoPublicacion;
 
     public Libros() {
     }
@@ -111,8 +112,7 @@ public class Libros {
 
     @Override
     public String toString() {
-        return "Nombre del titulo: " + titulo;
+        return titulo;
     }
 
- 
 }
